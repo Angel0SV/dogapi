@@ -59,12 +59,16 @@ async function loadFavoritesImg() {
             const dataHTML = `
                 <div class="img-favourite">
                     <img src=${e.image.url} alt="">
-                    <div onclick="${() => deleteFavorites(e.id)}" class="buttonDelete" title="Quitar de favoritos">
+                    <div class="buttonDelete" title="Quitar de favoritos">
                         <i class="fa-solid fa-heart-crack"></i>
                     </div>
                 </div>
         `;
             sectionFavorite.innerHTML += dataHTML;
+        })
+        const buttonsDelete = document.querySelectorAll('.img-favourite>div')
+        buttonsDelete.forEach((d,i) => {
+            d.onclick = () => deleteFavorite(data[i].id)
         })
         console.log(data)
     } catch(err) {
@@ -74,6 +78,18 @@ async function loadFavoritesImg() {
 }
 
 async function deleteFavorite(id) {
+    try {
+        const response = await fetch(`${URL_API}/favourites/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'X-API-KEY': 'live_G0jtWG909v2Q2MVt6dph2bXTLBLtivpVmHJPpwVcC9phZ6KSRtPGkiok1YHbMkqb'
+            }
+        });
+        console.log('Eliminado')
+        loadFavoritesImg()
+    } catch (err) {
+        console.log(err)
+    }
     
 }
 loadImages()
