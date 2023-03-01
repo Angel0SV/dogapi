@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Consumiendo DOG API</h1>
+        <p>🐶Proyecto practico usando API REST y JS🐶</p>
+    </header>
+
+    <main class="main">
+        <section class="main__random-images">
+            <h2>Random Images</h2>
+            <div class="container-images">
+                <div class="container-img">
+                    <img src="" alt="">
+                    <div id="buttonFavorite" title="Añadir a favoritos">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    
+                </div>
+                
+                <div class="container-img">
+                    <img  alt="">
+                    <div id="buttonFavorite" title="Añadir a favoritos">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+                <div class="container-img">
+                    <img src="" alt="">
+                    <div id="buttonFavorite" title="Añadir a favoritos">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+                <div class="container-img">
+                    <img src="" alt="">
+                    <div id="buttonFavorite" title="Añadir a favoritos">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="reload" onclick="loadImages()">
+                <i class="fa-solid fa-rotate-right"></i> Recargar
+            </div>
+        </section>
+    </main>
+</body>
+<script src="app.js"></script>
+</html>
