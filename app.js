@@ -59,7 +59,7 @@ async function loadFavoritesImg() {
             const dataHTML = `
                 <div class="img-favourite">
                     <img src=${e.image.url} alt="">
-                    <div class="buttonDelete" title="Quitar de favoritos">
+                    <div onclick="${() => deleteFavorites(e.id)}" class="buttonDelete" title="Quitar de favoritos">
                         <i class="fa-solid fa-heart-crack"></i>
                     </div>
                 </div>
@@ -70,6 +70,10 @@ async function loadFavoritesImg() {
     } catch(err) {
         console.log(err)
     }
+    
+}
+
+async function deleteFavorite(id) {
     
 }
 loadImages()
